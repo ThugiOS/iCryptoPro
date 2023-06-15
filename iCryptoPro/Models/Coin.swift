@@ -7,35 +7,55 @@
 
 import Foundation
 
-struct Coin {
-    
+struct CoinArray: Decodable {
+    let data: [Coin]
+}
+
+struct Coin: Decodable {
     let id: Int
     let name: String
-    let max_supply: Int?
-    let cmc_rank: Int
-    let quote: Quote
+    let maxSupply: Int?
+    let rank: Int
+    let pricingData: PricingData
     
     var logoURL: URL? {
         return URL(string: "https://s2.coinmarketcap.com/static/img/coins/200x200/1.png")
     }
     
-    struct Quote {
-        let USD: USD
-        
-        struct USD {
-            let price: Double
-            let market_cap: Double
-        }
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case name = "name"
+        case maxSupply = "max_supply"
+        case rank = "cmc_rank"
+        case pricingData = "quote"
     }
+
 }
 
-extension Coin {
-    
-    public static func getMockArray() -> [Coin] {
-        return [
-            Coin(id: 1, name: "Bitcoin", max_supply: 200, cmc_rank: 1, quote: Quote(USD: Quote.USD(price: 50_000, market_cap: 1_000_000))),
-            Coin(id: 2, name: "Ethereum", max_supply: nil, cmc_rank: 2, quote: Quote(USD: Quote.USD(price: 2000, market_cap: 500_000))),
-            Coin(id: 3, name: "Monero", max_supply: nil, cmc_rank: 3, quote: Quote(USD: Quote.USD(price: 200, market_cap: 250_000))),
-        ]
-    }
+struct PricingData: Decodable {
+    let USD: USD
 }
+
+struct USD: Decodable {
+    let price: Double
+    let marketCap: Double
+}
+
+
+//struct PricingData: Decodable {
+//    let price: Double
+//    let market_cap: Double
+//
+//    enum CodingKeys: String, CodingKey {
+//        case USD
+//        case price
+//        case marketCap = "market_cap"
+//    }
+//
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        let usd = try container.nestedContainer(keyedBy: CodingKey.self, forKey: .USD)
+//        price = try usd.decode(Double.self, forKey: .price)
+//        market_cap = try usd.decode(Double.self, forKey: .marketCap)
+//    }
+//}
