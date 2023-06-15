@@ -25,6 +25,7 @@ class HomeController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "iCryptoPro"
 
         self.setupUI()
         
@@ -64,8 +65,22 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         
         let coin = self.coins[indexPath.row]
         cell.configure(with: coin)
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 88.0
+    }
+    
+    // tap animation and deselect row
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        let coin = self.coins[indexPath.row]
+        let vm = ViewCryptoControllerViewModel(coin: coin)
+        let vc = ViewCryptoController(vm)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
+ 
