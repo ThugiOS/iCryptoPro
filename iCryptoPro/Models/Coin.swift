@@ -19,7 +19,7 @@ struct Coin: Decodable {
     let pricingData: PricingData
     
     var logoURL: URL? {
-        return URL(string: "https://s2.coinmarketcap.com/static/img/coins/200x200/1.png")
+        return URL(string: "https://s2.coinmarketcap.com/static/img/coins/200x200/\(id).png")
     }
     
     enum CodingKeys: String, CodingKey {
