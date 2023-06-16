@@ -9,11 +9,10 @@ import Foundation
 
 enum Endpoint {
     
-    case fetchCoins(url: String = "/v1/cryptocurrency/listings/latest", currency: String = "USD")
+    case fetchCoins(url: String = "/v1/cryptocurrency/listings/latest")
     
     var request: URLRequest? {
         guard let url = self.url else { return nil }
-        
         var request = URLRequest(url: url)
         request.httpMethod = self.httpMethod
         request.httpBody = self.httpBody
@@ -27,28 +26,30 @@ enum Endpoint {
         components.host = Constants.baseURL
         components.port = Constants.port
         components.path = self.path
-        components.queryItems = []
+        components.queryItems = self.queryItems
         return components.url
     }
     
     private var path: String {
         switch self {
-        case .fetchCoins(let url, _):
+        case .fetchCoins(let url):
             return url
         }
     }
     
+    
     private var queryItems: [URLQueryItem] {
         switch self {
-        case .fetchCoins(_, let currency):
+        case .fetchCoins:
             return [
                 URLQueryItem(name: "limit", value: "150"),
                 URLQueryItem(name: "sort", value: "market_cap"),
-                URLQueryItem(name: "convert", value: currency),
-                URLQueryItem(name: "aux", value: "cmc_rank,max_supply,circulating_supply,total_supply"),
+                URLQueryItem(name: "convert", value: "CAD"),
+                URLQueryItem(name: "aux", value: "cmc_rank,max_supply,circulating_supply,total_supply")
             ]
         }
     }
+    
     
     private var httpMethod: String {
         switch self {
@@ -65,7 +66,10 @@ enum Endpoint {
     }
 }
 
+
+
 extension URLRequest {
+    
     mutating func addValues(for endpoint: Endpoint) {
         switch endpoint {
         case .fetchCoins:

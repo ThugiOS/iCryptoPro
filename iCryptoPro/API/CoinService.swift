@@ -14,23 +14,26 @@ enum CoinServiceError: Error {
 }
 
 class CoinService {
-    static func fetchCoins(with endpoint: Endpoint,
-                           complection: @escaping (Result<[Coin], CoinServiceError>)->Void) {
+    
+    static func fetchCoins(with endpoint: Endpoint, completion: @escaping (Result<[Coin], CoinServiceError>)->Void) {
         guard let request = endpoint.request else { return }
+        
         
         URLSession.shared.dataTask(with: request) { data, resp, error in
             if let error = error {
-                complection(.failure(.unknown(error.localizedDescription)))
+                completion(.failure(.unknown(error.localizedDescription)))
                 return
             }
             
             if let resp = resp as? HTTPURLResponse, resp.statusCode != 200 {
+                
                 do {
                     let coinError = try JSONDecoder().decode(CoinError.self, from: data ?? Data())
-                    complection(.failure(.serverError(coinError)))
-                } catch let error {
-                    complection(.failure(.unknown()))
-                    print(error.localizedDescription)
+                    completion(.failure(.serverError(coinError)))
+                    
+                } catch let err {
+                    completion(.failure(.unknown()))
+                    print(err.localizedDescription)
                 }
             }
             
@@ -38,14 +41,18 @@ class CoinService {
                 do {
                     let decoder = JSONDecoder()
                     let coinData = try decoder.decode(CoinArray.self, from: data)
-                    complection(.success(coinData.data))
-                } catch let error {
-                    complection(.failure(.decodingError()))
-                    print(error.localizedDescription)
+                    completion(.success(coinData.data))
+                    
+                } catch let err {
+                    completion(.failure(.decodingError()))
+                    print(err.localizedDescription)
                 }
+                
             } else {
-                complection(.failure(.unknown()))
+                completion(.failure(.unknown()))
             }
+            
         }.resume()
     }
+    
 }

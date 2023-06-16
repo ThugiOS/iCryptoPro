@@ -112,8 +112,8 @@
 		2781A9A42A39F6DC00EA8645 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2781A9B02A3B1FF900EA8645 /* ViewCryptoControllerViewModel.swift */,
 				2781A9BA2A3C982F00EA8645 /* HomeControllerViewModel.swift */,
+				2781A9B02A3B1FF900EA8645 /* ViewCryptoControllerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";

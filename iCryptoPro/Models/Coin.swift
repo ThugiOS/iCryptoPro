@@ -5,13 +5,14 @@
 //  Created by Никитин Артем on 14.06.23.
 //
 
+
 import Foundation
 
 struct CoinArray: Decodable {
     let data: [Coin]
 }
 
-struct Coin: Decodable {
+struct Coin: Codable {
     let id: Int
     let name: String
     let maxSupply: Int?
@@ -29,33 +30,13 @@ struct Coin: Decodable {
         case rank = "cmc_rank"
         case pricingData = "quote"
     }
-
 }
 
-struct PricingData: Decodable {
-    let USD: USD
+struct PricingData: Codable {
+    let CAD: CAD
 }
 
-struct USD: Decodable {
+struct CAD: Codable {
     let price: Double
-    let marketCap: Double
+    let market_cap: Double
 }
-
-
-//struct PricingData: Decodable {
-//    let price: Double
-//    let market_cap: Double
-//
-//    enum CodingKeys: String, CodingKey {
-//        case USD
-//        case price
-//        case marketCap = "market_cap"
-//    }
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        let usd = try container.nestedContainer(keyedBy: CodingKey.self, forKey: .USD)
-//        price = try usd.decode(Double.self, forKey: .price)
-//        market_cap = try usd.decode(Double.self, forKey: .marketCap)
-//    }
-//}
