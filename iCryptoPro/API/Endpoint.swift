@@ -44,7 +44,7 @@ enum Endpoint {
             return [
                 URLQueryItem(name: "limit", value: "150"),
                 URLQueryItem(name: "sort", value: "market_cap"),
-                URLQueryItem(name: "convert", value: "CAD"),
+                URLQueryItem(name: "convert", value: "USD"),
                 URLQueryItem(name: "aux", value: "cmc_rank,max_supply,circulating_supply,total_supply")
             ]
         }

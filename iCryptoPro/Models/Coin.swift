@@ -33,10 +33,10 @@ struct Coin: Codable {
 }
 
 struct PricingData: Codable {
-    let CAD: CAD
+    let USD: USD
 }
 
-struct CAD: Codable {
+struct USD: Codable {
     let price: Double
     let market_cap: Double
 }

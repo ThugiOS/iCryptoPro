@@ -20,7 +20,7 @@ class CoinCell: UITableViewCell {
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(systemName: "questionmark.app")
         iv.tintColor = .black
-        iv.backgroundColor = .systemBlue
+        iv.backgroundColor = .systemBackground
         return iv
     }()
     
