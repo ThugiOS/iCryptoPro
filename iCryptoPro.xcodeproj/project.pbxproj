@@ -21,6 +21,8 @@
 		2781A9B32A3B414E00EA8645 /* CoinError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A9B22A3B414E00EA8645 /* CoinError.swift */; };
 		2781A9B52A3C706B00EA8645 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A9B42A3C706B00EA8645 /* HTTP.swift */; };
 		2781A9B72A3C734700EA8645 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A9B62A3C734700EA8645 /* Endpoint.swift */; };
+		2781A9B92A3C8F2C00EA8645 /* CoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A9B82A3C8F2C00EA8645 /* CoinService.swift */; };
+		2781A9BB2A3C982F00EA8645 /* HomeControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781A9BA2A3C982F00EA8645 /* HomeControllerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		2781A9B22A3B414E00EA8645 /* CoinError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinError.swift; sourceTree = "<group>"; };
 		2781A9B42A3C706B00EA8645 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		2781A9B62A3C734700EA8645 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2781A9B82A3C8F2C00EA8645 /* CoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinService.swift; sourceTree = "<group>"; };
+		2781A9BA2A3C982F00EA8645 /* HomeControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				2781A9B02A3B1FF900EA8645 /* ViewCryptoControllerViewModel.swift */,
+				2781A9BA2A3C982F00EA8645 /* HomeControllerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			children = (
 				2781A9B42A3C706B00EA8645 /* HTTP.swift */,
 				2781A9B62A3C734700EA8645 /* Endpoint.swift */,
+				2781A9B82A3C8F2C00EA8645 /* CoinService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -218,8 +224,10 @@
 				2781A9B32A3B414E00EA8645 /* CoinError.swift in Sources */,
 				2781A9AB2A3A021100EA8645 /* Coin.swift in Sources */,
 				2781A9AD2A3A057100EA8645 /* CoinCell.swift in Sources */,
+				2781A9BB2A3C982F00EA8645 /* HomeControllerViewModel.swift in Sources */,
 				2781A9B52A3C706B00EA8645 /* HTTP.swift in Sources */,
 				2781A9B72A3C734700EA8645 /* Endpoint.swift in Sources */,
+				2781A9B92A3C8F2C00EA8645 /* CoinService.swift in Sources */,
 				2781A9A92A39F82B00EA8645 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
