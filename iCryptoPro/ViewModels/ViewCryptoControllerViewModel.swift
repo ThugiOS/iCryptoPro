@@ -9,8 +9,6 @@ import UIKit
 
 class ViewCryptoControllerViewModel {
     
-    
-    
     // MARK: - Variables
     let coin: Coin
     
