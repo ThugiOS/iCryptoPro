@@ -10,7 +10,6 @@ import Foundation
 struct Constants {
     
     // MARK: - API
-
     static let scheme = "https"
     static let baseURL = "pro-api.coinmarketcap.com"
     static let port: Int? = nil

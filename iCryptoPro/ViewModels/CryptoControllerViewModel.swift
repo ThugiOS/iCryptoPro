@@ -1,5 +1,5 @@
 //
-//  ViewCryptoControllerViewModel.swift
+//  CryptoControllerViewModel.swift
 //  iCryptoPro
 //
 //  Created by Никитин Артем on 15.06.23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewCryptoControllerViewModel {
+class CryptoControllerViewModel {
     
     // MARK: - Variables
     let coin: Coin

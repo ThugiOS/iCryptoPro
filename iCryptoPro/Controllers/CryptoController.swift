@@ -1,5 +1,5 @@
 //
-//  ViewCryptoController.swift
+//  CryptoController.swift
 //  iCryptoPro
 //
 //  Created by Никитин Артем on 15.06.23.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ViewCryptoController: UIViewController {
+class CryptoController: UIViewController {
 
     // MARK: - Variables
-    let viewModel: ViewCryptoControllerViewModel
+    let viewModel: CryptoControllerViewModel
     
     // MARK: - UI Components
     private let scrollView: UIScrollView = {
@@ -63,7 +63,6 @@ class ViewCryptoController: UIViewController {
         label.textColor = .label
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 20, weight: .semibold)
-//        label.text = "Error"
         label.numberOfLines = 500
         return label
     }()
@@ -78,7 +77,7 @@ class ViewCryptoController: UIViewController {
     }()
     
     // MARK: - LifeCycle
-    init(_ viewModel: ViewCryptoControllerViewModel) {
+    init(_ viewModel: CryptoControllerViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -102,7 +101,6 @@ class ViewCryptoController: UIViewController {
         
         self.coinLogo.sd_setImage(with: self.viewModel.coin.logoURL)
     }
-    
     
     // MARK: - UI Setup
     private func setupUI() {

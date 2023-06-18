@@ -37,7 +37,6 @@ enum Endpoint {
         }
     }
     
-    
     private var queryItems: [URLQueryItem] {
         switch self {
         case .fetchCoins:
@@ -49,7 +48,6 @@ enum Endpoint {
             ]
         }
     }
-    
     
     private var httpMethod: String {
         switch self {
@@ -65,8 +63,6 @@ enum Endpoint {
         }
     }
 }
-
-
 
 extension URLRequest {
     

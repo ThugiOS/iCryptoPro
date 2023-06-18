@@ -12,7 +12,6 @@ class HomeController: UIViewController {
     // MARK: - Variables
     private let viewModel: HomeControllerViewModel
     
-    
     // MARK: - UI Components
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -22,7 +21,6 @@ class HomeController: UIViewController {
         tv.register(CoinCell.self, forCellReuseIdentifier: CoinCell.identifier)
         return tv
     }()
-    
     
     // MARK: - LifeCycle
     init(_ viewModel: HomeControllerViewModel = HomeControllerViewModel()) {
@@ -50,6 +48,7 @@ class HomeController: UIViewController {
             }
         }
         
+        //alert
         self.viewModel.onErrorMessage = { [weak self] error in
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
@@ -70,8 +69,6 @@ class HomeController: UIViewController {
                 self?.present(alert, animated: true, completion: nil)
             }
         }
-        
-        
     }
     
     // MARK: - UI Setup
@@ -107,14 +104,12 @@ extension HomeController: UISearchResultsUpdating {
     }
 }
 
-
 // MARK: - TableView Functions
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let inSearchMode = self.viewModel.inSearchMode(searchController)
         return inSearchMode ? self.viewModel.filteredCoins.count : self.viewModel.allCoins.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -132,18 +127,15 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         return 88.0
     }
     
-    // tap animation and deselect row
+    // animation and deselect row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
         
         let inSearchMode = self.viewModel.inSearchMode(searchController)
         let coin = inSearchMode ? self.viewModel.filteredCoins[indexPath.row] : self.viewModel.allCoins[indexPath.row]
         
-
-        let vm = ViewCryptoControllerViewModel(coin: coin)
-        let vc = ViewCryptoController(vm)
+        let vm = CryptoControllerViewModel(coin: coin)
+        let vc = CryptoController(vm)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
- 

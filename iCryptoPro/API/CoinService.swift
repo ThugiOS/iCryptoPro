@@ -18,7 +18,6 @@ class CoinService {
     static func fetchCoins(with endpoint: Endpoint, completion: @escaping (Result<[Coin], CoinServiceError>)->Void) {
         guard let request = endpoint.request else { return }
         
-        
         URLSession.shared.dataTask(with: request) { data, resp, error in
             if let error = error {
                 completion(.failure(.unknown(error.localizedDescription)))
@@ -54,5 +53,4 @@ class CoinService {
             
         }.resume()
     }
-    
 }

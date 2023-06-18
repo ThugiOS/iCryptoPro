@@ -51,16 +51,6 @@ class CoinCell: UITableViewCell {
         self.coinName.text = coin.name
         
         self.coinLogo.sd_setImage(with: coin.logoURL)
-        
-//        DispatchQueue.global().async { [weak self] in
-//            if let logoURL = coin.logoURL,
-//               let imageData = try? Data(contentsOf: logoURL),
-//               let logoImage = UIImage(data: imageData) {
-//                DispatchQueue.main.async {
-//                    self?.coinLogo.image = logoImage
-//                }
-//            }
-//        }
     }
     
     override func prepareForReuse() {

@@ -5,7 +5,6 @@
 //  Created by Никитин Артем on 14.06.23.
 //
 
-
 import Foundation
 
 struct CoinArray: Decodable {
