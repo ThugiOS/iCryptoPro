@@ -1,7 +1,7 @@
 <img src="https://img.shields.io/badge/Swift-UIKit-success">
-
+<!-- 
 ---
-<!-- ### Данный пет-проект является курсовым в рамках обучения в школе [TeachMeSkills](https://teachmeskills.by) "iOS разработчик".
+### Данный пет-проект является курсовым в рамках обучения в школе [TeachMeSkills](https://teachmeskills.by) "iOS разработчик".
 
 За основу была взята идея создания приложения для существуещего бизнеса по ремонту и обслуживанию электросамокатов и другого электротранспорта.
 Приложение включает в себя:
@@ -10,9 +10,9 @@
 - Внутренний чат с мастером
 - Телефон и ссылки на другие мессенджеры
 - Актуальные цены на ремент и прочие услуги
-- Карту с местонахождением мастерской для удобства пользователя  -->
+- Карту с местонахождением мастерской для удобства пользователя 
  
----
+--- -->
 
 ## Architecture
 - MVVM
@@ -34,3 +34,6 @@
 <p align="center">
       <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/2.gif" width="320">
 </p>
+
+#### Contact with me
+[LinkedIn](https://www.linkedin.com/in/artem-swift/) | [Email](mailto:artem.ios.nikitin@gmail.com "artem.ios.nikitin@gmail.com")
