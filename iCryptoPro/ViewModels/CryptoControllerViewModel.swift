@@ -6,8 +6,18 @@
 //
 
 import UIKit
+import Foundation
 
 class CryptoControllerViewModel {
+    
+    var onCoinsUpdated: (()->Void)?
+    var onErrorMessage: ((CoinServiceError)->Void)?
+    
+    private(set) var allCoins: [Coin] = [] {
+        didSet {
+            self.onCoinsUpdated?()
+        }
+    }
     
     // MARK: - Variables
     let coin: Coin
@@ -15,7 +25,6 @@ class CryptoControllerViewModel {
     // MARK: - Initializer
     init(coin: Coin) {
         self.coin = coin
-
     }
     
     // MARK: - Computed Properties
@@ -24,19 +33,22 @@ class CryptoControllerViewModel {
     }
     
     var priceLabel: String {
-        return "Price: $\(self.coin.pricingData.USD.price) USD"
+        return "Price: $\(round(self.coin.pricingData.USD.price * 10000) / 10000)"
     }
     
     var marketCapLabel: String {
-        return "Market Cap: $\(self.coin.pricingData.USD.market_cap) USD"
+        return "Market Cap: $\(Int(self.coin.pricingData.USD.market_cap))"
+    }
+
+    var percentChange1h: String {
+        return "Percent change 1h:  \(round(self.coin.pricingData.USD.percent_change_1h * 100) / 100) %"
     }
     
-    var maxSupplyLabel: String {
-        
-        if let maxSupply = self.coin.maxSupply {
-            return "Rank: \(maxSupply)"
-        } else {
-            return "error text"
-        }
+    var percentChange24h: String {
+        return "Percent change 24h:  \(round(self.coin.pricingData.USD.percent_change_24h * 100) / 100) %"
+    }
+    
+    var percentChange7d: String {
+        return "Percent change 7d:  \(round(self.coin.pricingData.USD.percent_change_7d * 100) / 100) %"
     }
 }

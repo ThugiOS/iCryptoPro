@@ -10,7 +10,7 @@ import UIKit
 class CryptoController: UIViewController {
 
     // MARK: - Variables
-    let viewModel: CryptoControllerViewModel
+    var viewModel: CryptoControllerViewModel
     
     // MARK: - UI Components
     private let scrollView: UIScrollView = {
@@ -58,7 +58,7 @@ class CryptoController: UIViewController {
         return label
     }()
     
-    private let maxSupplyLabel: UILabel = {
+    private let percentChange1h: UILabel = {
         let label = UILabel()
         label.textColor = .label
         label.textAlignment = .center
@@ -67,12 +67,31 @@ class CryptoController: UIViewController {
         return label
     }()
     
+    private let percentChange24h: UILabel = {
+        let label = UILabel()
+        label.textColor = .label
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.numberOfLines = 500
+        return label
+    }()
+    
+    private let percentChange7d: UILabel = {
+        let label = UILabel()
+        label.textColor = .label
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.numberOfLines = 500
+        return label
+    }()
+
     private lazy var vStack: UIStackView = {
-        let vStack = UIStackView(arrangedSubviews: [rankLabel, priceLabel, marketCapLabel, maxSupplyLabel])
+        let vStack = UIStackView(arrangedSubviews: [rankLabel, priceLabel, marketCapLabel, percentChange1h, percentChange24h, percentChange7d])
         vStack.axis = .vertical
-        vStack.spacing = 12
+        vStack.spacing = 18
         vStack.alignment = .center
         vStack.distribution = .fill
+
         return vStack
     }()
     
@@ -88,8 +107,9 @@ class CryptoController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
         
+        self.setupUI()
+
         self.view.backgroundColor = .systemBackground
         self.navigationItem.title = self.viewModel.coin.name
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: nil, action: nil)
@@ -97,7 +117,9 @@ class CryptoController: UIViewController {
         self.rankLabel.text = self.viewModel.rankLabel
         self.priceLabel.text = self.viewModel.priceLabel
         self.marketCapLabel.text = self.viewModel.marketCapLabel
-        self.maxSupplyLabel.text = self.viewModel.maxSupplyLabel
+        self.percentChange1h.text = self.viewModel.percentChange1h
+        self.percentChange24h.text = self.viewModel.percentChange24h
+        self.percentChange7d.text = self.viewModel.percentChange7d
         
         self.coinLogo.sd_setImage(with: self.viewModel.coin.logoURL)
     }
@@ -146,3 +168,5 @@ class CryptoController: UIViewController {
         ])
     }
 }
+
+
