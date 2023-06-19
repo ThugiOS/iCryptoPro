@@ -28,5 +28,5 @@
 - UIImageView
 
 <p align="center">
-      <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/crypta.gif" width="220">  <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/screen.png" width="220">
+      <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/1.gif" width="220">  <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/2.gif" width="220">
 </p>
