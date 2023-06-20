@@ -1,7 +1,7 @@
 <img src="https://img.shields.io/badge/Swift-UIKit-success">
 
 ---
-# iCryptaPro
+# iCryptoPro
 This small application is based on the API from CoinMarketCap.
 The main goal was to provide fast and convenient access to the essential information of each cryptocurrency. Search by name.
 
