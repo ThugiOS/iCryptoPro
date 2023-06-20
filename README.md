@@ -1,24 +1,26 @@
 <img src="https://img.shields.io/badge/Swift-UIKit-success">
 
-<!-- ---
-### Данный пет-проект является курсовым в рамках обучения в школе [TeachMeSkills](https://teachmeskills.by) "iOS разработчик".
-
-За основу была взята идея создания приложения для существуещего бизнеса по ремонту и обслуживанию электросамокатов и другого электротранспорта.
-Приложение включает в себя:
-- Регистрацию
-- Автоматически сгенерированный QR-Код для системы лояльности и внутреннего учета
-- Внутренний чат с мастером
-- Телефон и ссылки на другие мессенджеры
-- Актуальные цены на ремент и прочие услуги
-- Карту с местонахождением мастерской для удобства пользователя  -->
- 
 ---
+# iCryptaPro
+This small application is based on the API from CoinMarketCap.
+The main goal was to provide fast and convenient access to the essential information of each cryptocurrency. Search by name.
 
-## Architecture
-- MVVM
+For each cryptocurrency, we can obtain the following information:
+- Ranking position on CoinMarketCap
+- Price
+- Market capitalization
+- 1 hour trading price percentage change for each currency.
+- 24 hour trading price percentage change for each currency.
+- 7 day trading price percentage change for each currency.
+
+---
 ## Stack
+### Architecture
+- MVVM
+### Frameworks
 - UIKit
 - SDWebImage
+### Technologies
 - NSLayoutConstraint
 - API CoinMarketCap
 - URLSession
