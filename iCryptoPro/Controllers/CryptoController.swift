@@ -275,6 +275,7 @@ class CryptoController: UIViewController {
             
             self.viewModel.goToCoinMarketCap()
         }
+ 
     }
 }
 
