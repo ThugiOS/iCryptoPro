@@ -34,7 +34,6 @@ class CryptoControllerViewModel {
     
     var priceLabel: String {
         return "Price: \(coin.pricingData.USD.price)$"
-//        return "Price: $\(round(self.coin.pricingData.USD.price / 1000) * 1000)"
     }
     
     var marketCapLabel: String {
@@ -42,9 +41,7 @@ class CryptoControllerViewModel {
     }
 
     var percentChange1h: Double {
-//        return "Percent change 1h:  \(round(self.coin.pricingData.USD.percent_change_1h * 100) / 100) %"
         return round(self.coin.pricingData.USD.percent_change_1h * 1000) / 1000
-    
     }
     
     var percentChange24h: Double {
@@ -74,6 +71,8 @@ class CryptoControllerViewModel {
     }
     
     func goToCoinMarketCap() {
-        print("artem")
+        if let url = URL(string: "https://coinmarketcap.com") {
+            UIApplication.shared.open(url)
+        }
     }
 }

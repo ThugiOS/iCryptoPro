@@ -48,7 +48,6 @@ class HomeController: UIViewController {
             }
         }
         
-        //alert
         self.viewModel.onErrorMessage = { [weak self] error in
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
@@ -65,7 +64,7 @@ class HomeController: UIViewController {
                     alert.title = "Error Parsing Data"
                     alert.message = string
                 }
-                
+
                 self?.present(alert, animated: true, completion: nil)
             }
         }

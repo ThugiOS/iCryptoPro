@@ -180,84 +180,84 @@ class CryptoController: UIViewController {
     
     // MARK: - UI Setup
     private func setupUI() {
-        self.view.addSubview(scrollView)
-        self.scrollView.addSubview(contentView)
-        self.contentView.addSubview(symbol)
-        self.contentView.addSubview(coinLogo)
-        self.contentView.addSubview(percentView)
-        self.percentView.addSubview(percentChangeLabel)
-        self.percentView.addSubview(percentChange1h)
-        self.percentView.addSubview(percentChange24h)
-        self.percentView.addSubview(percentChange7d)
-        self.contentView.addSubview(vStack)
-        self.contentView.addSubview(buttonMarketCap)
+        self.view.addSubview(self.scrollView)
+        self.scrollView.addSubview(self.contentView)
+        self.contentView.addSubview(self.symbol)
+        self.contentView.addSubview(self.coinLogo)
+        self.contentView.addSubview(self.percentView)
+        self.percentView.addSubview(self.percentChangeLabel)
+        self.percentView.addSubview(self.percentChange1h)
+        self.percentView.addSubview(self.percentChange24h)
+        self.percentView.addSubview(self.percentChange7d)
+        self.contentView.addSubview(self.vStack)
+        self.contentView.addSubview(self.buttonMarketCap)
 
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        symbol.translatesAutoresizingMaskIntoConstraints = false
-        coinLogo.translatesAutoresizingMaskIntoConstraints = false
-        percentView.translatesAutoresizingMaskIntoConstraints = false
-        percentChangeLabel.translatesAutoresizingMaskIntoConstraints = false
-        percentChange1h.translatesAutoresizingMaskIntoConstraints = false
-        percentChange24h.translatesAutoresizingMaskIntoConstraints = false
-        percentChange7d.translatesAutoresizingMaskIntoConstraints = false
-        vStack.translatesAutoresizingMaskIntoConstraints = false
-        buttonMarketCap.translatesAutoresizingMaskIntoConstraints = false
+        self.scrollView.translatesAutoresizingMaskIntoConstraints = false
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        self.symbol.translatesAutoresizingMaskIntoConstraints = false
+        self.coinLogo.translatesAutoresizingMaskIntoConstraints = false
+        self.percentView.translatesAutoresizingMaskIntoConstraints = false
+        self.percentChangeLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.percentChange1h.translatesAutoresizingMaskIntoConstraints = false
+        self.percentChange24h.translatesAutoresizingMaskIntoConstraints = false
+        self.percentChange7d.translatesAutoresizingMaskIntoConstraints = false
+        self.vStack.translatesAutoresizingMaskIntoConstraints = false
+        self.buttonMarketCap.translatesAutoresizingMaskIntoConstraints = false
 
-        let height = contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
+        let height = self.contentView.heightAnchor.constraint(equalTo: self.scrollView.heightAnchor)
         height.priority = UILayoutPriority(1)
         height.isActive = true
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
-            scrollView.heightAnchor.constraint(equalTo: view.layoutMarginsGuide.heightAnchor),
-            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            self.scrollView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor),
+            self.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.scrollView.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor),
+            self.scrollView.heightAnchor.constraint(equalTo: self.view.layoutMarginsGuide.heightAnchor),
+            self.scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
         
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            self.contentView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor),
+            self.contentView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
+            self.contentView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor),
+            self.contentView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor),
+            self.contentView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor),
             
-            symbol.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-            symbol.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 40.0),
+            self.symbol.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            self.symbol.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 40.0),
             
-            coinLogo.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-            coinLogo.topAnchor.constraint(equalTo: self.symbol.bottomAnchor, constant: 10.0),
-            coinLogo.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            coinLogo.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            coinLogo.heightAnchor.constraint(equalToConstant: 200.0),
+            self.coinLogo.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            self.coinLogo.topAnchor.constraint(equalTo: self.symbol.bottomAnchor, constant: 10.0),
+            self.coinLogo.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            self.coinLogo.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            self.coinLogo.heightAnchor.constraint(equalToConstant: 200.0),
 
-            percentChangeLabel.topAnchor.constraint(equalTo: coinLogo.bottomAnchor, constant: 15.0),
-            percentChangeLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            self.percentChangeLabel.topAnchor.constraint(equalTo: self.coinLogo.bottomAnchor, constant: 15.0),
+            self.percentChangeLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             
-            percentView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-            percentView.topAnchor.constraint(equalTo: self.percentChangeLabel.bottomAnchor, constant: 5.0),
-            percentView.widthAnchor.constraint(equalToConstant: 300.0),
-            percentView.heightAnchor.constraint(equalToConstant: 50.0),
+            self.percentView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            self.percentView.topAnchor.constraint(equalTo: self.percentChangeLabel.bottomAnchor, constant: 5.0),
+            self.percentView.widthAnchor.constraint(equalToConstant: 300.0),
+            self.percentView.heightAnchor.constraint(equalToConstant: 50.0),
             
-            percentChange24h.centerYAnchor.constraint(equalTo: percentView.centerYAnchor),
-            percentChange24h.centerXAnchor.constraint(equalTo: percentView.centerXAnchor),
+            self.percentChange24h.centerYAnchor.constraint(equalTo: self.percentView.centerYAnchor),
+            self.percentChange24h.centerXAnchor.constraint(equalTo: self.percentView.centerXAnchor),
 
-            percentChange1h.centerYAnchor.constraint(equalTo: percentView.centerYAnchor),
-            percentChange1h.trailingAnchor.constraint(equalTo: percentChange24h.leadingAnchor, constant: -15.0),
+            self.percentChange1h.centerYAnchor.constraint(equalTo: self.percentView.centerYAnchor),
+            self.percentChange1h.trailingAnchor.constraint(equalTo: self.percentChange24h.leadingAnchor, constant: -15.0),
 
-            percentChange7d.centerYAnchor.constraint(equalTo: percentView.centerYAnchor),
-            percentChange7d.leadingAnchor.constraint(equalTo: percentChange24h.trailingAnchor, constant: 15.0),
+            self.percentChange7d.centerYAnchor.constraint(equalTo: self.percentView.centerYAnchor),
+            self.percentChange7d.leadingAnchor.constraint(equalTo: self.percentChange24h.trailingAnchor, constant: 15.0),
             
-            buttonMarketCap.topAnchor.constraint(equalTo: percentView.bottomAnchor, constant: 20.0),
-            buttonMarketCap.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            buttonMarketCap.widthAnchor.constraint(equalToConstant: 300.0),
-            buttonMarketCap.heightAnchor.constraint(equalToConstant: 55.0),
+            self.buttonMarketCap.topAnchor.constraint(equalTo: self.percentView.bottomAnchor, constant: 20.0),
+            self.buttonMarketCap.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            self.buttonMarketCap.widthAnchor.constraint(equalToConstant: 300.0),
+            self.buttonMarketCap.heightAnchor.constraint(equalToConstant: 55.0),
             
-            vStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            vStack.topAnchor.constraint(equalTo: buttonMarketCap.bottomAnchor, constant: 20.0),
-            vStack.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            vStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            vStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            self.vStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.vStack.topAnchor.constraint(equalTo: self.buttonMarketCap.bottomAnchor, constant: 20.0),
+            self.vStack.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            self.vStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            self.vStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
         ])
     }
 
@@ -269,10 +269,8 @@ class CryptoController: UIViewController {
             UIView.animate(withDuration: 0.08) {
                 self.buttonMarketCap.transform = CGAffineTransform.identity
             }
-            
             self.viewModel.goToCoinMarketCap()
         }
- 
     }
 }
 
