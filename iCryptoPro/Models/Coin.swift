@@ -14,7 +14,8 @@ struct CoinArray: Decodable {
 struct Coin: Codable {
     let id: Int
     let name: String
-//    let maxSupply: Int?
+    let symbol: String
+    let lastUpdated: String
     let rank: Int
     let pricingData: PricingData
     
@@ -25,7 +26,8 @@ struct Coin: Codable {
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
-//        case maxSupply = "max_supply"
+        case symbol = "symbol"
+        case lastUpdated = "last_updated"
         case rank = "cmc_rank"
         case pricingData = "quote"
     }
@@ -36,7 +38,7 @@ struct PricingData: Codable {
 }
 
 struct USD: Codable {
-    let price: Double
+    let price: Float
     let market_cap: Double
     let percent_change_1h: Double
     let percent_change_24h: Double

@@ -33,22 +33,47 @@ class CryptoControllerViewModel {
     }
     
     var priceLabel: String {
-        return "Price: $\(round(self.coin.pricingData.USD.price * 10000) / 10000)"
+        return "Price: \(coin.pricingData.USD.price)$"
+//        return "Price: $\(round(self.coin.pricingData.USD.price / 1000) * 1000)"
     }
     
     var marketCapLabel: String {
-        return "Market Cap: $\(Int(self.coin.pricingData.USD.market_cap))"
+        return "Market Cap: \(Int(self.coin.pricingData.USD.market_cap))$"
     }
 
-    var percentChange1h: String {
-        return "Percent change 1h:  \(round(self.coin.pricingData.USD.percent_change_1h * 100) / 100) %"
+    var percentChange1h: Double {
+//        return "Percent change 1h:  \(round(self.coin.pricingData.USD.percent_change_1h * 100) / 100) %"
+        return round(self.coin.pricingData.USD.percent_change_1h * 1000) / 1000
+    
     }
     
-    var percentChange24h: String {
-        return "Percent change 24h:  \(round(self.coin.pricingData.USD.percent_change_24h * 100) / 100) %"
+    var percentChange24h: Double {
+        return round(self.coin.pricingData.USD.percent_change_24h * 100) / 100
     }
     
-    var percentChange7d: String {
-        return "Percent change 7d:  \(round(self.coin.pricingData.USD.percent_change_7d * 100) / 100) %"
+    var percentChange7d: Double {
+        return round(self.coin.pricingData.USD.percent_change_7d * 100) / 100
+    }
+    
+    var symbol: String {
+        return "\(coin.symbol)"
+    }
+    
+    var lastUpdated: String {
+        let dateString = coin.lastUpdated
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        if let date = dateFormatter.date(from: dateString) {
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+            let outputString = outputFormatter.string(from: date)
+            return "Last updated: \(outputString)"
+        } else {
+            return "Last updated: \(dateString)"
+        }
+    }
+    
+    func goToCoinMarketCap() {
+        print("artem")
     }
 }
