@@ -262,9 +262,6 @@ class CryptoController: UIViewController {
     }
 
     // MARK: - Selectors
-//    @objc func buttonTapped() {
-//        viewModel.goToCoinMarketCap()
-//    }
     @objc private func buttonTapped() {
         UIView.animate(withDuration: 0.08, animations: {
             self.buttonMarketCap.transform = CGAffineTransform(scaleX: 0.96, y: 0.96)
