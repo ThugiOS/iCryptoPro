@@ -29,11 +29,15 @@ For each cryptocurrency, we can obtain the following information:
 - UIImageView
 
 <p align="center">
-      <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/1.gif" width="320">
+      <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/list.gif" width="320">
 </p>
 
 <p align="center">
-      <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/2.gif" width="320">
+      <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/search.gif" width="320">
+</p>
+
+<p align="center">
+      <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/goCoin.gif" width="320">
 </p>
 
 #### Contact with me
