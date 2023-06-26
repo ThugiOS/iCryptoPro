@@ -30,7 +30,7 @@ For each cryptocurrency, we can obtain the following information:
 
 ---
 <p align="center">
-      <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/list.gif" width="320"><img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/search.gif" width="320"><img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/goCoin.gif" width="320">
+      <img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/list.gif" width="300"><img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/search.gif" width="300"><img src="https://github.com/ThugiOS/iCryptoPro/blob/main/media/goCoin.gif" width="300">
 </p>
 
 #### Contact with me
