@@ -13,6 +13,7 @@ For each cryptocurrency, we can obtain the following information:
 - 24 hour trading price percentage change for each currency.
 - 7 day trading price percentage change for each currency.
 
+
 ---
 ## Stack:
 ### Architecture
@@ -28,6 +29,7 @@ For each cryptocurrency, we can obtain the following information:
 - UISearchController
 - UITableView
 - UIImageView
+
 
 ---
 <p align="center">
